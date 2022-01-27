@@ -1,9 +1,13 @@
 import { View, Text, StyleSheet } from 'react-native'
 
-export default function Header() {
+interface HeaderProps {
+  tela: string
+}
+
+export default function Header(props: HeaderProps) {
   return (
     <View style={styles.header}>
-      <Text>Header</Text>
+      <Text style={styles.textoHeader}>{props.tela}</Text>
     </View>
   )
 }
@@ -15,5 +19,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     backgroundColor: '#B257E6'
+  },
+  textoHeader: {
+    fontSize: 18,
+    fontWeight: 'bold'
   }
 })

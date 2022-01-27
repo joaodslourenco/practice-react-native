@@ -1,13 +1,16 @@
 import { View, Text, StyleSheet } from 'react-native'
 import Header from './Header'
 
-export default function Layout() {
+interface LayoutProps {
+  tela: string
+  children: any
+}
+
+export default function Layout(props: LayoutProps) {
   return (
     <View>
-      <Header />
-      <View style={styles.layout}>
-        <Text>Hello World aaaaaaaa</Text>
-      </View>
+      <Header tela={props.tela} />
+      <View style={styles.layout}>{props.children}</View>
     </View>
   )
 }
